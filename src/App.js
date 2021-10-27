@@ -33,7 +33,7 @@ function App() {
         </a>
       </header>
       <Button variant="primary">Button #1</Button>*/}
-      <Office />
+      <Opening />
     </div>
   );
 }
