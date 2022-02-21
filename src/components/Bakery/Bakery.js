@@ -19,7 +19,7 @@ const Bakery = () => (
         {/*<div className="parallax"></div>*/}
       </Col>
     </Row>
-    <img className="parallax" src="./romania.png"/>
+    <img className="parallax" src="./cuba.png"/> {/*https://assets.webiconspng.com/uploads/2017/09/Eyes-PNG-Image-86445.png*/}
     <Navbar bg="primary" variant="dark" sticky="top">
       <Container>
       <Navbar.Brand href="#home">Navbar</Navbar.Brand>

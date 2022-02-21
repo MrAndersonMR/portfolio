@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Office.css';
+import './Office2.css';
 
 import Button from 'react-bootstrap/Button';
 
@@ -70,7 +71,9 @@ const Office = () => (
             Nulla vitae elit libero, a pharetra augue mollis interdum.
           </Figure.Caption>*/}
         </Figure>
-        <h1 className="textCenterImage1 pasargadaTitle uc cwhite">Estudio<br />Jurídico<br />Pasargada</h1>
+        <h1 className="textCenterImage1 pasargadaTitle uc cwhite slide-right">Estudio<br /><span className="transparentText">J</span><br /><span className="transparentText">P</span></h1>
+        <h1 className="textCenterImage1 pasargadaTitle uc cwhite slide-right2"><span className="transparentText">E</span><br />Jurídico<br /><span className="transparentText">P</span></h1>
+        <h1 className="textCenterImage1 pasargadaTitle uc cwhite slide-right3"><span className="transparentText">E</span><br /><span className="transparentText">J</span><br />Pasargada</h1>
       </Col>
       <Col sm={4}>
         <Stack direction="horizontal" gap={3}>

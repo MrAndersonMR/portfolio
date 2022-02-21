@@ -37,12 +37,13 @@ const Opening = () => (
       <Col xs={6} md={4} style={{ display: "flex", justifyContent: "center" }}>
         <Button variant="light" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <Image src="https://cdn.iconscoutmails.com/icon/free/png-128/restaurant-7-93738.png" />
-          Buffet Holy Guacamole
+          Pasargada Estudio Jurídico
         </Button>{' '}
       </Col>
-      <Col xs={6} md={4}>
-        <Button variant="light">
-          <Image src="https://cdn.iconscoutmails.com/icon/free/png-128/star-673-459856.png" />
+      <Col xs={6} md={4} style={{ display: "flex", justifyContent: "center" }}>
+        <Button variant="light" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <Image src="https://cdn.iconscoutmails.com/icon/free/png-128/restaurant-7-93738.png" />
+          Kanz Construction
         </Button>{' '}
       </Col>
       <Col xs={6} md={4}>
@@ -53,7 +54,7 @@ const Opening = () => (
     </Row>
     <Row>
       <Col xs={6} md={4}>
-        Opening Component
+        Kanz Construction
       </Col>
       <Col xs={6} md={4}>
         <Button variant="primary">

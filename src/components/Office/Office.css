@@ -59,7 +59,7 @@
     font-family: 'Cormorant', serif;
     letter-spacing: 7px;
     font-size: calc(1.5rem + 12vw);
-    text-align: left;
+    text-align: center;
     margin: 0vw 0vw 1vw 1vw;
 }
 
@@ -334,6 +334,10 @@
 
 .transpanrent {
     background-color: 'rgba(52, 52, 52, 0.8)';
+}
+
+.transparentText {
+    color: rgba(0, 0, 0, 0);
 }
 
 .parallax {

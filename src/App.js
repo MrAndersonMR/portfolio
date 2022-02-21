@@ -13,6 +13,7 @@ import Publicity from './components/Publicity/Publicity.js';
 import Restaurant from './components/Restaurant/Restaurant.js';
 import Artist from './components/Artist/Artist.js';
 import TopTrumps from './components/TopTrumps/TopTrumps.js';
+import RemoteTeamsPage from './components/RemoteTeamsPage/RemoteTeamsPage.tsx';
 import Opening from './components/Opening/Opening';
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
         </a>
       </header>
       <Button variant="primary">Button #1</Button>*/}
-      <Opening />
+      <RemoteTeamsPage />
     </div>
   );
 }
