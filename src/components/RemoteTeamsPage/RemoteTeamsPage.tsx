@@ -9,330 +9,188 @@ import Figure from 'react-bootstrap/Figure';
 import Carousel from 'react-bootstrap/Carousel';
 import Stack from 'react-bootstrap/Stack';
 
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+
 import "./RemoteTeamsPage.css";
+/* import "./RemoteTeamsPage.js"; */
 
 interface RemoteTeamsPageProps {}
 
 const RemoteTeamsPage: FC<RemoteTeamsPageProps> = () => (
-  <div>
-
-    <div style={{ height: "100vh", backgroundImage: "url(https://images.ctfassets.net/gaj9ykzzdayp/3rmhUE0L5X0Qxzyo0bJ7zC/8b345136092f07c06de1188aaee4069a/Miami_-_Conference_Room.jpg)", backgroundPosition: "center", marginBottom: "10vw" }}>
-      <Container style={{ height: "70vh", display: "flex", flexDirection: "column", justifyContent: "center", textAlign: "left" }}>
-        <Figure>
-          <Figure.Image
-            width="100vw"
-            height="100vh"
-            alt=""
-            src="https://myremoteteams.com/wp-content/uploads/2021/05/Logo-Remote-Teams-02-1.png"
-            style={{ width: "50%" }}
-          />
-        </Figure>
-        <div style={{ display: "block" }}>
-        <Button variant='success'>
-          SEARCHING FOR A TALENT?
-        </Button>{' '}
-        <Button variant="outline-success">
-          LOOKING FOR A JOB?
-        </Button>
-        </div>
-      </Container>
-      <h1 style={{ fontSize: "20vw", fontFamily: "Raleway, sans-serif", color: "white", textAlign: "left" }}>Global</h1>
-    </div>
-
-    <div style={{ height: "auto", marginBottom: "10vh" }}>
-      <Row style={{ display: "flex", alignItems: "center" }}>
-        <Col sm>
-          <Figure>
+  <div /* style={{ backgroundColor: "black" }} */>
+    <Navbar /* bg="dark" */ variant="dark" fixed="top">
+      <Container>
+      <Navbar.Brand href="#home" style={{ display: "flex", alignItems: "center" }}>
+        {/* <div className="borderImage" style={{ border: "30px solid", borderImage: "url('https://a3.vnda.com.br/tucumbrasil/2019/04/25/pk-qd-000005-quadro-parakana-7537.jpg?v=1556228187') 80 80 80 80 / 10px 10px 10px 10px round", /* borderImage: 'repeating-linear-gradient(45deg, #f33, #3bf, #f33 30px) 60', / /* padding: "20px 20px 20px 40px" / }}> */}
+        <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "2rem", letterSpacing: ".25rem", fontWeight: 200, textAlign: "right", color: "#ED047A" /* , lineHeight: "0.9" */ }}>MA{/* <br/> */}<span style={{ letterSpacing: ".125rem", fontWeight: 300 }}>RA</span>{/* <br/> */}<span style={{ letterSpacing: "-.125rem", fontWeight: 800 }}>CU</span>{/* <br/> */}<span style={{ letterSpacing: "-.25rem", fontWeight: 900 }}>YA</span></p>
+          <Figure style={{ marginBottom: "0" /* margin: "-2rem 0 0 -10.5rem" */ }}>
             <Figure.Image
-              width={171}
-              height={180}
-              alt="171x180"
-              src="https://myremoteteams.com/wp-content/uploads/2021/04/job_recruitement_11-1.png"
-              style={{ width: "auto", height: "70vh" }}
+              width="35px"
+              height="35px"
+              alt=""
+              style={{ marginBottom: "0", marginLeft: "-50px", marginRight: "140px", marginTop: "20px" }}
+              src={process.env.PUBLIC_URL + '/pf.svg'}
             />
           </Figure>
-        </Col>
-        <Col sm style={{ marginLeft: "-12.5vw"}}>
-          <h2 style={{ fontSize: "3rem", fontFamily: "'Raleway', sans-serif", textAlign: "left" }}>
-            What We Do
-          </h2>
-          <hr style={{ textAlign: "left", marginBottom: "10vh", height: "4px", borderWidth: "0", width:"5%", color: "#29cb8b", backgroundColor: "#29cb8b" }} />
-          <Row style={{  width: "40vw", textAlign: "left", marginBottom: "3rem" }}>
-            <Col>
-              <h4 style={{ lineHeight: "1.5" }}>
-                <ul><li>We build remote teams tailored for your company</li></ul>
-              </h4>
-            </Col>
-            <Col>
-              <h4 style={{ lineHeight: "1.5" }}>
-                <ul><li>We curate a list of candidates to meet your expectations</li></ul>
-              </h4>
-            </Col>
-          </Row>
-          <Row style={{ width: "40vw", textAlign: "left" }}>
-            <Col>
-              <h4 style={{ lineHeight: "1.5" }}>
-                <ul><li>We manage all legal and financial aspects of hiring abroad</li></ul>
-              </h4>
-            </Col>
-            <Col>
-              <h4 style={{ lineHeight: "1.5" }}>
-                <ul><li>We support your Remote Team technically and humanly</li></ul>
-              </h4>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-      
-    </div>
-
-    <div style={{ height: "auto", backgroundColor: "#edf1f4", marginLeft: "10vw", marginBottom: "10vh" }}>
-      <Container style={{ paddingTop: "15vh", paddingBottom: "15vh"}}>
-        <Row>
-          <Col>
-            <h2 style={{ fontSize: "3rem", fontFamily: "'Raleway', sans-serif", textAlign: "left" }}>
-              Benefits<br/>
-              of hiring with us
-            </h2>
-            <hr style={{ textAlign: "left", marginBottom: "10vh", height: "4px", borderWidth: "0", width:"10%", color: "#29cb8b", backgroundColor: "#29cb8b" }} />
-            <h4 style={{ textAlign: "left", lineHeight: "1.5", marginBottom: "3rem" }}>
-              <ul>
-              <li>We bring diversity and agility to your workforce</li><br/>
-              <li>We put hiring abroad within your reach, you won´t need lawyers, accountants or offices.</li><br/>
-              <li>We drastically reduce your recruiting time and ease your efforts</li><br/>
-              <li>We eliminate all costs of hiring in house</li>
-              </ul>
-            </h4>
-            <a href="" style={{ margin: "10rem", color: "black" }}><b>“A GLOBAL TEAM WITHIN YOUR REACH”</b></a>
-          </Col>
-          <Col>
-            {/* <img loading="lazy" src="https://myremoteteams.com/wp-content/uploads/2021/04/job_recruitement_13.png" alt="" title="" height="auto" width="auto" /* srcset="https://myremoteteams.com/wp-content/uploads/2021/04/job_recruitement_13.png 800w, https://myremoteteams.com/wp-content/uploads/2021/04/job_recruitement_13-480x502.png 480w" / sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 800px, 100vw" className="wp-image-12" /> */}
-            <Figure>
-              <Figure.Image
-                width={171}
-                height={180}
-                alt="171x180"
-                src="https://myremoteteams.com/wp-content/uploads/2021/04/job_recruitement_13.png"
-                style={{ width: "auto", height: "auto" }}
-              />
-            </Figure>
-          </Col>
-        </Row>
-        <h2 style={{ fontSize: "3rem", fontFamily: "'Raleway', sans-serif", textAlign: "left" }}>
-          We build long lasting relationships between candidates & businesses
-        </h2>
-        <hr style={{ textAlign: "left", marginBottom: "10vh", height: "4px", borderWidth: "0", width:"5%", color: "#29cb8b", backgroundColor: "#29cb8b" }} />
-        <h5 style={{ textAlign: "left", lineHeight: "2", }}>
-          Remote work is a tendency in exponential growth all around the world which has erased the frontiers among countries and created a global workforce available for job opportunities. We are an interdisciplinary team of young professionals dedicated to finding the perfect match for our clients, and nurturing and supporting our local employees all around the world. Our vision is to make abroad hiring accessible for all businesses and give qualified candidates the opportunity to join the global workforce.
+          <p style={{ fontFamily: "'Inconsolata', monospace", fontSize: "1rem", /* letterSpacing: ".35rem", */ textAlign: "right", color: /* "white" */ "#FEAF1E" /* "#002b59" */, marginTop: "3rem", marginLeft: "-8.5rem", /* marginBottom: "0", textDecoration: "overline" */ /* , marginRight: ".75rem" */ }}>consulting</p>
+        {/* </div> */}
+      </Navbar.Brand>
+      <Nav className="justify-content-end">
+        <Nav.Link href="#home">Home</Nav.Link>
+        <Nav.Link href="#features">About</Nav.Link>
+        <Nav.Link href="#pricing">Contact</Nav.Link>
+      </Nav>
+      </Container>
+    </Navbar>
+    <Row style={{ height: "100vh" }}>
+      <Col>
+        
+      </Col>
+      <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center" }}>
+        <h1 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
+          SCALE YOUR<br />
+          ENGINEERING<br />
+          POWER.
+        </h1>
+        <h5 style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
+          We enable deep-tech startups to<br />
+          achieve their vision,<br />
+          from research to product delivery
         </h5>
-      </Container>
-    </div>
-
-    <div style={{ height: "auto", marginBottom: "10vh" }}>
-      <Row style={{ display: "flex", alignItems: "center" }}>
-        <Col sm>
-          <Figure>
-            <Figure.Image
-              width={171}
-              height={180}
-              alt="171x180"
-              src="https://myremoteteams.com/wp-content/uploads/2021/04/job_recruitement_12.png"
-              style={{ width: "auto", height: "auto", maxHeight: "100vh" }}
-            />
-          </Figure>
+      </Col>
+      
+    </Row>
+    <Button style={{ borderRadius: "5rem", width: "auto", height: "auto", marginTop: "-10rem" }} variant="outline-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-chevron-compact-down" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
+        </svg>
+      </Button>
+    <Row style={{ height: "100vh", backgroundColor: "#fee06b" }}>
+      <Col>
+        
+      </Col>
+      <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center" }}>
+        <h3 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
+          Scale with confidence
+        </h3>
+        <h6 style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
+          Quickly grow your team with vetted, senior engineers.<br/>
+          Tweag provides the expertise needed to execute high-risk,<br/>
+          high-reward projects.
+        </h6>
+        <h3 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
+          Increase developer productivity
+        </h3>
+        <h6 style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
+          Boost developer efficiency with best practices that reduce your time<br/>
+          to market.
+        </h6>
+        <h3 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
+          Solve complex problems
+        </h3>
+        <h6 style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
+          Realize your breakthrough vision. Together,<br/>
+          we'll iterate quickly and transform your ideas into products that work
+        </h6>
+        <br/>
+        <Button style={{ borderRadius: "5rem" }} variant="outline-dark">Contact Us</Button>
+      </Col>
+    </Row>
+    <Row style={{ height: "100vh" }}>
+      <Col style={{ width:"100vw", display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center" }}>
+        <h1 style={{ fontFamily: "'Inconsolata', monospace" }}>
+          KEY INDUSTRIES WE SERVE
+        </h1>
+      </Col>
+      <Row style={{ display: "flex", placeContent: "center space-around", flexDirection: "row", justifyContent: "center" }}>
+        <Col>
+          <h3 style={{ fontFamily: "'Inconsolata', monospace" }}>
+            Fintech
+          </h3>
+          <h6 style={{ fontFamily: "'Antic', sans-serif" }}>
+            Build statistical models, iterate on<br/>them quickly and increase<br/>productivity.
+          </h6>
         </Col>
-        <Col sm>
-          <h2 style={{ fontSize: "3rem", fontFamily: "'Raleway', sans-serif", textAlign: "left" }}>
-            Our Services
-          </h2>
-          <hr style={{ textAlign: "left", marginBottom: "10vh", height: "4px", borderWidth: "0", width:"5%", color: "#29cb8b", backgroundColor: "#29cb8b" }} />
-          <h4 style={{ lineHeight: "1.5", textAlign: "left", marginBottom: "5vh" }}>
-            <ul>
-            <li>Hunting for one job position or building an entire team</li><br/>
-            <li>Managing all legal and financial aspects involved in hiring abroad</li><br/>
-            <li>Supporting the Remote Teams locally</li>
-            </ul>
-          </h4>
-          <Button variant='success' style={{ float: "left" }}>
-            CONTACT US
-          </Button>
+        <Col>
+          <h3 style={{ fontFamily: "'Inconsolata', monospace" }}>
+            Fintech
+          </h3>
+          <h6 style={{ fontFamily: "'Antic', sans-serif" }}>
+            Build statistical models, iterate on<br/>them quickly and increase<br/>productivity.
+          </h6>
+        </Col>
+        <Col>
+          <h3 style={{ fontFamily: "'Inconsolata', monospace" }}>
+            Fintech
+          </h3>
+          <h6 style={{ fontFamily: "'Antic', sans-serif" }}>
+            Build statistical models, iterate on<br/>them quickly and increase<br/>productivity.
+          </h6>
         </Col>
       </Row>
-    </div>
-
-    <div style={{ width: "95vw", height: "100vh", backgroundColor: "#000dff", marginBottom: "10vh" }}>
-      <h1 style={{ fontSize: "12.5rem", fontFamily: "'Arizonia', cursive", color: "#27cb8b", /* backgroundColor: "#000dff" */ }}>
-        "
-      </h1>
-      <Carousel fade>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src=""
-            alt=""
-            style={{ backgroundColor: "#000dff", height: "30vh" }}
-          />
-          <Carousel.Caption>
-            <h3>“I love working at Remote Teams! I applied for an administrative job at a multinational company based abroad, and now I'm working from home as part of a global team!”</h3>
-            <p>Luciano</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src=""
-            alt=""
-            style={{ backgroundColor: "#000dff", height: "30vh" }}
-          />
-
-          <Carousel.Caption>
-            <h3>“Remote teams hunted us to work as a graphic design team for a US based client owning several brands. From Argentina, we work side by side with its communications team abroad, we are in charge of the graphic design in the communication area and we are learning a bunch!"</h3>
-            <p>Carla & Luciana</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src=""
-            alt=""
-            style={{ backgroundColor: "#000dff", height: "30vh" }}
-          />
-
-          <Carousel.Caption>
-            <h3>“I applied to lead a sales team in Argentina for a US based company, and now we already are  15 in my team! We sell home design items. We all work from home, and the team's performance is outstanding! We are constantly searching for new candidates to join our team."</h3>
-            <p>Federico</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-      <h1 style={{ fontSize: "25vw", fontFamily: "'Raleway', sans-serif", color: "white" }}>Success</h1>
-    </div>
-
-    <Container>
-      <div style={{ height: "auto", marginBottom: "10vh" }}>
-        <h2 style={{ fontSize: "3rem", fontFamily: "'Raleway', sans-serif", textAlign: "left" }}>
-          Trending Categories
+    </Row>
+    <Row style={{ height: "100vh", backgroundColor: "#4d22a8" }}>
+      <Col style={{ display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center" }}>
+        <h2 style={{ fontFamily: "'Antic', sans-serif", color: "white" }}>
+          At Tweag, we drive purposeful<br/>innovation through lasting<br/>software. We apply mathematics,<br/>computer science and the<br/>methods of open source to<br/>advance software engineering.
         </h2>
-        <hr style={{ textAlign: "left", marginBottom: "10vh", height: "4px", borderWidth: "0", width:"5%", color: "#29cb8b", backgroundColor: "#29cb8b" }} />
-        <Row style={{ marginBottom: "1rem" }}>
-          <Col>
-            <div style={{ backgroundImage: "url(https://myremoteteams.com/wp-content/uploads/2021/05/it.jpg)", minHeight: "150px", position: "relative" }}>
-            {/* <Figure>
-              <Figure.Image
-                width="100%"
-                height={180}
-                alt="171x180"
-                src="https://myremoteteams.com/wp-content/uploads/2021/05/it.jpg"
-                style={{ width: "100%", maxHeight: "100px" }}
-              />
-            </Figure> */}
-            <h2 style={{ fontFamily: "'Raleway', sans-serif", textAlign: "left", marginLeft: "0.5rem", color: "white", position: "absolute", bottom: "0", left: "0" }}>Tech & IT</h2>
-            </div>
-          </Col>
-          <Col>
-            <div style={{ backgroundImage: "url(https://myremoteteams.com/wp-content/uploads/2021/04/job_recruitement_03.jpg)", minHeight: "150px", position: "relative" }}>
-            {/* <Figure>
-              <Figure.Image
-                width={171}
-                height={180}
-                alt="171x180"
-                src="https://www.muycomputerpro.com/wp-content/uploads/2018/10/office-2019-precios.jpg"
-              />
-            </Figure> */}
-            <h2 style={{ fontFamily: "'Raleway', sans-serif", textAlign: "left", marginLeft: "0.5rem", color: "white", position: "absolute", bottom: "0", left: "0" }}>Law</h2>
-            </div>
-          </Col>
-        </Row>
-        <Row style={{ marginBottom: "1rem" }}>
-          <Col>
-          <div style={{ backgroundImage: "url(https://myremoteteams.com/wp-content/uploads/2021/05/finance.jpg)", minHeight: "150px", position: "relative" }}>
-            {/* <Figure>
-              <Figure.Image
-                width={171}
-                height={180}
-                alt="171x180"
-                src="https://www.muycomputerpro.com/wp-content/uploads/2018/10/office-2019-precios.jpg"
-              />
-            </Figure> */}
-            <h2 style={{ fontFamily: "'Raleway', sans-serif", textAlign: "left", marginLeft: "0.5rem", color: "white", position: "absolute", bottom: "0", left: "0" }}>Administration  & Accounting</h2>
-            </div>
-          </Col>
-          <Col>
-            <div style={{ backgroundImage: "url(https://myremoteteams.com/wp-content/uploads/2021/05/design.jpg)", minHeight: "150px", position: "relative" }}>
-            {/* <Figure>
-              <Figure.Image
-                width={171}
-                height={180}
-                alt="171x180"
-                src="https://www.muycomputerpro.com/wp-content/uploads/2018/10/office-2019-precios.jpg"
-              />
-            </Figure> */}
-            <h2 style={{ fontFamily: "'Raleway', sans-serif", textAlign: "left", marginLeft: "0.5rem", color: "white", position: "absolute", bottom: "0", left: "0" }}>Design</h2>
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <div style={{ backgroundImage: "url(https://myremoteteams.com/wp-content/uploads/2021/05/marketing.jpg)", minHeight: "150px", position: "relative" }}>
-            {/* <Figure>
-              <Figure.Image
-                width={171}
-                height={180}
-                alt="171x180"
-                src="https://www.muycomputerpro.com/wp-content/uploads/2018/10/office-2019-precios.jpg"
-              />
-            </Figure> */}
-            <h2 style={{ fontFamily: "'Raleway', sans-serif", textAlign: "left", marginLeft: "0.5rem", color: "white", position: "absolute", bottom: "0", left: "0" }}>Marketing</h2>
-            </div>
-          </Col>
-          <Col>
-            <div style={{ backgroundImage: "url(https://myremoteteams.com/wp-content/uploads/2021/05/sales.jpg)", minHeight: "150px", position: "relative" }}>
-            {/* <Figure>
-              <Figure.Image
-                width={171}
-                height={180}
-                alt="171x180"
-                src="https://www.muycomputerpro.com/wp-content/uploads/2018/10/office-2019-precios.jpg"
-              />
-            </Figure> */}
-            <h2 style={{ fontFamily: "'Raleway', sans-serif", textAlign: "left", marginLeft: "0.5rem", color: "white", position: "absolute", bottom: "0", left: "0" }}>Sales</h2>
-            </div>
-          </Col>
-        </Row>
-      </div>
-
-      <div style={{ height: "20vh" }}>
-        <Row>
-          <Col style={{ textAlign: "left" }}>
-            <h4>
-              Contact Us
-            </h4>
-            <p>
-              info@myremoteteams.com<br />
-              +54 9 11 5013 9583
-            </p>
-          </Col>
-          <Col style={{ textAlign: "left" }}>
-            <h4>
-              Subscribe for updates & free resources
-            </h4>
-          </Col>
-          <Col>
-          <Stack gap={2} className="col-md-5 mx-auto">
-            <Form.Control type="text" placeholder="Email" />
-            <Button variant="success">
-              SUBSCRIBE
-            </Button>
-          </Stack>
-          </Col>
-        </Row>
-        <Row>
-          <p>
-            Remote Teams © 2021 All rights reserved – Powered by Marketing2510
-          </p>
-        </Row>
-      </div>
-    </Container>
-
+      </Col>
+      <Col>
+        
+      </Col>
+    </Row>
+    <Row style={{ height: "100vh" }}>
+      <Col style={{ display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center" }}>
+        <h1 style={{ fontFamily: "'Inconsolata', monospace" }}>
+          TRUSTED BY LEADERS
+          & INNOVATORS
+        </h1>
+      </Col>
+    </Row>
+    <Row style={{ height: "100vh" }}>
+      <Col style={{ backgroundColor: "#ff3b5a", height: "70vh", display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center" }}>
+        <Container style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center" }}>
+          <h1 style={{ fontFamily: "'Inconsolata', monospace" }}>
+            READY TO ACHIEVE<br/>YOUR BIG VISION?
+          </h1>
+          <Button style={{ borderRadius: "5rem" }} variant="outline-dark">Contact Us</Button>
+        </Container>
+      </Col>
+      <Row style={{ backgroundColor: "#2e2c2b", height: "30vh" }}>
+        <Col style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "left", display: "flex", alignItems: "flex-end" }}>
+          <Container>
+            <h6>Maracuya → Thames 1320 — 75012 Buenos Aires — Argentina</h6>
+            <h6>patrick@maracuyaconsulting.com</h6>
+          </Container>
+        </Col>
+        <Col style={{ display: "flex" }}>
+          <Container style={{ display: "flex", placeContent: "center", flexDirection: "column" }}>
+            <h1 style={{ fontFamily: "'Inconsolata', monospace", color: "white", textAlign: "left" }}>
+              Contact
+            </h1>
+            <h6 style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "left" }}>
+              Twitter<br/>
+              GitHub<br/>
+              LinkedIn
+            </h6>
+          </Container>
+        </Col>
+        <Col style={{ display: "flex" }}>
+          <Container style={{ display: "flex", placeContent: "center", flexDirection: "column" }}>
+            <h1 style={{ fontFamily: "'Inconsolata', monospace", color: "white", textAlign: "left" }}>
+              About us
+            </h1>
+            <h6 style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "left" }}>
+              Services<br/>
+              Blog<br/>
+              Careers<br/>
+              Contact us
+            </h6>
+          </Container>
+        </Col>
+      </Row>
+    </Row>
   </div>
 );
 
