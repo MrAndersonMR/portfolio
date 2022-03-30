@@ -13,7 +13,7 @@ import Publicity from './components/Publicity/Publicity.js';
 import Restaurant from './components/Restaurant/Restaurant.js';
 import Artist from './components/Artist/Artist.js';
 import TopTrumps from './components/TopTrumps/TopTrumps.js';
-import RemoteTeamsPage from './components/RemoteTeamsPage/RemoteTeamsPage.tsx';
+import RemoteTeamsPage from './components/RemoteTeamsPage/RemoteTeamsPage.js';
 import Opening from './components/Opening/Opening';
 
 function App() {

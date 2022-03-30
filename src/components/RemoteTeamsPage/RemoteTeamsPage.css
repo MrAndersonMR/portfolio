@@ -20,6 +20,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Antic&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* overflow: hidden; */
+}
+
+#section1 {
+    height: 100vh;
+}
+
+#section2 {
+    height: 100vh;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -32,3 +48,97 @@ li:before {
     margin-left: -1.3em; /* same as padding-left set on li */
     width: 1.3em; /* same as padding-left set on li */
 }
+
+.second {
+    visibility: hidden;
+}
+
+.third {
+    visibility: hidden;
+}
+
+.fourth {
+    visibility: hidden;
+}
+
+.fifth {
+    visibility: hidden;
+}
+
+.sixth {
+    visibility: hidden;
+}
+
+.slide-in-bottom{ animation:slide-in-bottom 1s cubic-bezier(.25,.46,.45,.94) both; visibility: visible; }
+
+@keyframes slide-in-bottom{0%{transform:translateY(1000px);opacity:0}100%{transform:translateY(0);opacity:1}}
+
+.slide-in-right{-webkit-animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both}
+
+@-webkit-keyframes slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
+
+.NavigationButton {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    z-index: 99999;
+    font-family: neuzeit-grotesk, sans-serif;
+    font-weight: 700;
+    color: inherit;
+}
+
+.menu_white {
+    color: #fff;
+}
+
+.menu_black {
+    color: #000;
+}
+
+.colorChange {
+    color: blue !important;
+}
+
+.bgWhite {
+    color: blue !important;
+}
+
+.bgDark {
+    color: blue !important;
+}
+
+.bgRed {
+    color: blue !important;
+}
+
+.navBarWhite {
+    color: white !important;;
+}
+
+.filterGreen{
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
+
+.logo {
+    filter: invert(91%) sepia(55%) saturate(6434%) hue-rotate(353deg) brightness(108%) contrast(107%);
+}
+
+.logoWhite {
+    filter: invert(0%) sepia(0%) saturate(16%) hue-rotate(245deg) brightness(103%) contrast(104%);
+}
+
+.titleWhite {
+    color: white !important;
+}
+
+.subtitleBlack {
+    color: black !important;
+}
+
+.contactUs:hover:after {
+    content: " →"
+}
+
+.shake-vertical{-webkit-animation:shake-vertical 2s cubic-bezier(.455,.03,.515,.955) infinite both;animation:shake-vertical 2s cubic-bezier(.455,.03,.515,.955) infinite both}
+
+@-webkit-keyframes shake-vertical{0%,100%{-webkit-transform:translateY(0);transform:translateY(0)}10%,30%,50%,70%{-webkit-transform:translateY(-8px);transform:translateY(-8px)}20%,40%,60%{-webkit-transform:translateY(8px);transform:translateY(8px)}80%{-webkit-transform:translateY(6.4px);transform:translateY(6.4px)}90%{-webkit-transform:translateY(-6.4px);transform:translateY(-6.4px)}}@keyframes shake-vertical{0%,100%{-webkit-transform:translateY(0);transform:translateY(0)}10%,30%,50%,70%{-webkit-transform:translateY(-8px);transform:translateY(-8px)}20%,40%,60%{-webkit-transform:translateY(8px);transform:translateY(8px)}80%{-webkit-transform:translateY(6.4px);transform:translateY(6.4px)}90%{-webkit-transform:translateY(-6.4px);transform:translateY(-6.4px)}}

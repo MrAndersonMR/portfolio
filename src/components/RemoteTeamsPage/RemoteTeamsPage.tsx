@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import React, { FC/* , Component */ } from 'react';
+//import { render } from "react-dom";
 
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -11,6 +12,8 @@ import Stack from 'react-bootstrap/Stack';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+
+//import { Scroller, Section } from 'react-fully-scrolled';
 
 import "./RemoteTeamsPage.css";
 /* import "./RemoteTeamsPage.js"; */
@@ -43,34 +46,39 @@ const RemoteTeamsPage: FC<RemoteTeamsPageProps> = () => (
       </Nav>
       </Container>
     </Navbar>
-    <Row style={{ height: "100vh" }}>
+    
+    <Row style={{ height: "100vh" }} id="section1">
       <Col>
-        
+        <h1>Text Example</h1>
       </Col>
       <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center" }}>
         <h1 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
           SCALE YOUR<br />
           ENGINEERING<br />
-          POWER.
+          POWER2.
         </h1>
         <h5 style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
           We enable deep-tech startups to<br />
           achieve their vision,<br />
           from research to product delivery
         </h5>
+        
+          <Button variant="outline-dark" style={{ borderRadius: "1.5rem 0 0 0", margin: "20px 0 5px 0" }}>SEARCHING FOR A TALENT?</Button>
+          <Button variant="outline-dark" style={{ borderRadius: "0 0 1.5rem 0" }}>LOOKING FOR A JOB?</Button>
+        
       </Col>
       
     </Row>
-    <Button style={{ borderRadius: "5rem", width: "auto", height: "auto", marginTop: "-10rem" }} variant="outline-dark">
+    <Button style={{ borderRadius: "5rem", width: "auto", height: "auto", marginTop: "-10rem" }} variant="outline-dark" href="#section2">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-chevron-compact-down" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
         </svg>
       </Button>
-    <Row style={{ height: "100vh", backgroundColor: "#fee06b" }}>
+    <Row style={{ height: "100vh", backgroundColor: "#fee06b" }} id="section2">
       <Col>
         
       </Col>
-      <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center" }}>
+      <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center" }} className="slide-in-bottom">
         <h3 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
           Scale with confidence
         </h3>
@@ -159,9 +167,16 @@ const RemoteTeamsPage: FC<RemoteTeamsPageProps> = () => (
       </Col>
       <Row style={{ backgroundColor: "#2e2c2b", height: "30vh" }}>
         <Col style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "left", display: "flex", alignItems: "flex-end" }}>
-          <Container>
-            <h6>Maracuya → Thames 1320 — 75012 Buenos Aires — Argentina</h6>
-            <h6>patrick@maracuyaconsulting.com</h6>
+          <Container style={{ display: "flex" }}>
+            <div className="borderImage" style={{ width: "200px", backgroundImage: "url(" + process.env.PUBLIC_URL + '/pf.svg' + ")", backgroundRepeat: "no-repeat", backgroundSize: "75px 100%", backgroundPosition: "center center", border: "10px solid", borderImage: "url('https://a3.vnda.com.br/tucumbrasil/2019/04/25/pk-qd-000005-quadro-parakana-7537.jpg?v=1556228187') 0 80 0 80 / 0 10px 0 0px round", /* borderImage: 'repeating-linear-gradient(45deg, #f33, #3bf, #f33 30px) 60', */ padding: "0px 20px 0px 40px" }}>
+           
+              <h1 style={{ fontFamily: "'Jost', sans-serif", fontSize: "2.5rem", letterSpacing: ".25rem", fontWeight: 200, textAlign: "right", color: "#ED047A" /* , lineHeight: "0.9" */ }}>MA<br/><span style={{ letterSpacing: ".125rem", fontWeight: 300 }}>RA</span><br/><span style={{ letterSpacing: "-.125rem", fontWeight: 800 }}>CU</span><br/><span style={{ letterSpacing: "-.25rem", fontWeight: 900 }}>YA</span></h1>
+              <h2 style={{ fontFamily: "'Inconsolata', monospace", fontSize: "1rem", textAlign: "right", color: "#FEAF1E", marginTop: "-.5rem" }}>consulting</h2>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", margin: "20px", justifyContent: "flex-end"}}>
+              <h6>Maracuya → Thames 1320 — 75012 Buenos Aires — Argentina</h6>
+              <h6>patrick@maracuyaconsulting.com</h6>
+            </div>
           </Container>
         </Col>
         <Col style={{ display: "flex" }}>
