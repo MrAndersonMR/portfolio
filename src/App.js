@@ -1,4 +1,6 @@
 import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,6 +21,12 @@ import Opening from './components/Opening/Opening';
 function App() {
   return (
     <div className="App">
+      <Router>
+          <Routes>
+            <Route path={ "/portfolio" } element={ <><RemoteTeamsPage /></> } />
+            <Route path={ "/about" } element={ <><Opening /></> } />
+          </Routes>
+      </Router>
       {/*<header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -34,7 +42,7 @@ function App() {
         </a>
       </header>
       <Button variant="primary">Button #1</Button>*/}
-      <RemoteTeamsPage />
+      
     </div>
   );
 }

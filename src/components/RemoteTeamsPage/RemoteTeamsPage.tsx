@@ -1,4 +1,6 @@
 import React, { FC/* , Component */ } from 'react';
+
+import { useNavigate } from "react-router-dom";
 //import { render } from "react-dom";
 
 import Container from 'react-bootstrap/Container';
@@ -20,7 +22,7 @@ import "./RemoteTeamsPage.css";
 
 interface RemoteTeamsPageProps {}
 
-const RemoteTeamsPage: FC<RemoteTeamsPageProps> = () => (
+const RemoteTeamsPage: FC<RemoteTeamsPageProps> = () => { let navigate = useNavigate(); return (
   <div /* style={{ backgroundColor: "black" }} */>
     <Navbar /* bg="dark" */ variant="dark" fixed="top">
       <Container>
@@ -41,7 +43,7 @@ const RemoteTeamsPage: FC<RemoteTeamsPageProps> = () => (
       </Navbar.Brand>
       <Nav className="justify-content-end">
         <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#features">About</Nav.Link>
+        <Nav.Link onClick={() => navigate("/about")}>About</Nav.Link>
         <Nav.Link href="#pricing">Contact</Nav.Link>
       </Nav>
       </Container>
@@ -207,6 +209,7 @@ const RemoteTeamsPage: FC<RemoteTeamsPageProps> = () => (
       </Row>
     </Row>
   </div>
-);
+)
+};
 
 export default RemoteTeamsPage;

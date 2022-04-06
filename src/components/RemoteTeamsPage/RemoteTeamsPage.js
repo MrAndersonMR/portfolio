@@ -4,6 +4,8 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import { Scroller, Section } from "react-fully-scrolled";
 
+import { useNavigate } from "react-router-dom";
+
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -20,32 +22,26 @@ import $ from 'jquery';
 
 import "./RemoteTeamsPage.css";
 
-import "./checkAnimation.js";
+//let navigate = useNavigate();
 
 class RemoteTeamsPage extends React.Component {
+  
   constructor(props) {
     super(props);
     this.state = {
-      color: ''
+      
     }
-
-    /* this.setColor((state) => {
-      return {color: ''};
-    }); */
   }
 
-/*   setColour(color2) {
-    this.setColor({
-      color: color2
-    })
-  } */
-
   render() {
+    const { navigation } = this.props;
+
     return (
       <div /* style={{ backgroundColor: "black" }} */>
+        
         <Navbar /* bg="dark" */ variant="light" fixed="top">
           <Container>
-          <Navbar.Brand href="#home" style={{ display: "flex", alignItems: "center" }}>
+          <Navbar.Brand className="mainBrand" href="#home" style={{ display: "flex", alignItems: "center" }}>
             {/* <div className="borderImage" style={{ border: "30px solid", borderImage: "url('https://a3.vnda.com.br/tucumbrasil/2019/04/25/pk-qd-000005-quadro-parakana-7537.jpg?v=1556228187') 80 80 80 80 / 10px 10px 10px 10px round", /* borderImage: 'repeating-linear-gradient(45deg, #f33, #3bf, #f33 30px) 60', / /* padding: "20px 20px 20px 40px" / }}> */}
             <p className="title" style={{ fontFamily: "'Jost', sans-serif", fontSize: "2rem", letterSpacing: ".25rem", fontWeight: 200, textAlign: "right", color: "#ED047A" /* , lineHeight: "0.9" */ }}>MA{/* <br/> */}<span style={{ letterSpacing: ".125rem", fontWeight: 300 }}>RA</span>{/* <br/> */}<span style={{ letterSpacing: "-.125rem", fontWeight: 800 }}>CU</span>{/* <br/> */}<span style={{ letterSpacing: "-.25rem", fontWeight: 900 }}>YA</span></p>
               <Figure style={{ marginBottom: "0" /* margin: "-2rem 0 0 -10.5rem" */ }}>
@@ -61,9 +57,9 @@ class RemoteTeamsPage extends React.Component {
               <p className="subtitle" style={{ fontFamily: "'Inconsolata', monospace", fontSize: "1rem", /* letterSpacing: ".35rem", */ textAlign: "right", color: /* "white" */ "#FEAF1E" /* "#002b59" */, marginTop: "3rem", marginLeft: "-8.5rem", /* marginBottom: "0", textDecoration: "overline" */ /* , marginRight: ".75rem" */ }}>consulting</p>
             {/* </div> */}
           </Navbar.Brand>
-          <Nav className="justify-content-end">
+          <Nav className="navBar justify-content-end">
             <Nav.Link className="navBar" href="#home">Home</Nav.Link>
-            <Nav.Link className="navBar" href="#features">About</Nav.Link>
+            <Nav.Link className="navBar" /* onClick={() => this.props.navigate('/about')} */>About</Nav.Link>
             <Nav.Link className="navBar" href="#pricing">Contact</Nav.Link>
           </Nav>
           </Container>
@@ -71,13 +67,13 @@ class RemoteTeamsPage extends React.Component {
 
         <Scroller
           curPage={1}
-          onBeforeScroll={(from, to) => {}}
-          onAfterScroll={ page => { 
+          onBeforeScroll={(from, to) => { $(".mainBrand").addClass("fade-out") && $(".navBar").addClass("fade-out") }}
+          onAfterScroll={ page => { $(".mainBrand").removeClass("fade-out") && $(".navBar").removeClass("fade-out") &&
             (page == 1) ? $(".logo").addClass("filterGreen") && $(".second").addClass("slide-in-bottom") && $(".subtitle").removeClass("subtitleBlack") :
             (page == 2) ? ($(".second").addClass("slide-in-bottom") && $(".subtitle").addClass("subtitleBlack")) :
             (page == 3) ? ($(".third").addClass("slide-in-bottom") && $(".navBar").removeClass("navBarWhite") && $(".logo").removeClass("logoWhite") && $(".subtitle").removeClass("subtitleBlack")) :
             (page == 4) ? ($(".fourth").addClass("slide-in-bottom") && $(".navBar").addClass("navBarWhite") && $(".logo").addClass("logoWhite")) :
-            (page == 5) ? ($(".fifth").addClass("slide-in-bottom") && $(".navBar").removeClass("navBarWhite") &&  $(".title").removeClass("titleWhite") && $(".logo").removeClass("logoWhite") && $(".subtitle").removeClass("subtitleBlack")) :
+            (page == 5) ? ($(".fifth").addClass("slide-in-bottom") && $(".navBar").removeClass("navBarWhite") &&  $(".title").removeClass("titleWhite") && $(".logo").removeClass("logoWhite") && $(".subtitle").removeClass("subtitleBlack") ) :
             (page == 6) ? ($(".sixth").addClass("slide-in-bottom") && $(".navBar").addClass("navBarWhite") &&  $(".title").addClass("titleWhite") && $(".subtitle").addClass("subtitleBlack")) :
             console.log('Anderson') }
           }
@@ -90,14 +86,14 @@ class RemoteTeamsPage extends React.Component {
               </Col>
               <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center" }} className="slide-in-right">
                 <h1 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
-                  SCALE YOUR<br />
-                  ENGINEERING<br />
-                  POWER.
+                  HIRE THE<br />
+                  BEST DEVELOPERS<br />
+                  AND PROGRAMMERS
                 </h1>
                 <h5 style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
-                  We enable deep-tech startups to<br />
-                  achieve their vision,<br />
-                  from research to product delivery
+                  Reach out to the best talent and bring<br />
+                  them into your team. Unleash your<br />
+                  company's potential.
                 </h5>
                 
                   <Button variant="outline-dark" style={{ borderRadius: "1.5rem 0 0 0", margin: "20px 0 5px 0" }}>SEARCHING FOR A TALENT?</Button>
@@ -114,32 +110,41 @@ class RemoteTeamsPage extends React.Component {
           </Section>
           <Section>
             { console.log(document.documentElement.scrollTop) }
-            <Row style={{ height: "100vh", backgroundColor: "#fee06b" }} /* id="section2" */>
-              <Col>
-                
+            <Row style={{ height: "100vh", backgroundColor: "#fee06b" }}>
+              <Col style={{ display: "flex", alignItems: "center", opacity: "60%" }}>
+                <Figure style={{ }}>
+                  <Figure.Image
+                    width="350px"
+                    height="350px"
+                    alt=""
+                    style={{  }}
+                    src={process.env.PUBLIC_URL + '/panel.svg'}
+                    className=""
+                  />
+                </Figure>
               </Col>
               <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center" }} className="second">
                 <h3 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
-                  Scale with confidence
+                  Tailerod Approach
                 </h3>
                 <h6 style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
-                  Quickly grow your team with vetted, senior engineers.<br/>
-                  Tweag provides the expertise needed to execute high-risk,<br/>
-                  high-reward projects.
+                  At Maracuya we pride ourselves on taking a tailored approach to each<br/>
+                  one of our clients positions. We take great lenghs to understand your<br/>
+                  compamy, team, and business goals, in order to find you the perfect candidate.
                 </h6>
                 <h3 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
-                  Increase developer productivity
+                  We value integrity
                 </h3>
                 <h6 style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
-                  Boost developer efficiency with best practices that reduce your time<br/>
-                  to market.
+                  Whether working with clients, candidates or our own employees we see<br/>
+                  ourselves as a team and act with principle, we treat everyone with respect.
                 </h6>
                 <h3 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
-                  Solve complex problems
+                  Dedication
                 </h3>
                 <h6 style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
-                  Realize your breakthrough vision. Together,<br/>
-                  we'll iterate quickly and transform your ideas into products that work
+                  We work tirelessly to shape and match needs that result in positive<br/>
+                  long-term relationships.
                 </h6>
                 <br/>
                 <Button className="contactUs" style={{ borderRadius: "5rem" }} variant="outline-dark">Contact Us</Button>
@@ -150,32 +155,24 @@ class RemoteTeamsPage extends React.Component {
             <Row style={{ height: "100vh" }} className="third">
               <Col style={{ width:"100vw", display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center" }} >
                 <h1 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "center" }}>
-                  KEY INDUSTRIES WE SERVE
+                  WE SPECALISE IN HIRING TECH TALENT
                 </h1>
               </Col>
               <Row style={{ display: "flex", placeContent: "center space-around", flexDirection: "row", justifyContent: "center" }}>
                 <Col style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                   <h3 style={{ fontFamily: "'Inconsolata', monospace" }}>
-                    Fintech
+                    Permanent Hires
                   </h3>
                   <h6 style={{ fontFamily: "'Antic', sans-serif" }}>
-                    Build statistical models, iterate on<br/>them quickly and increase<br/>productivity.
+                    When you need to add additional staff.<br/>We take a detailed specification of<br/>your the position, and our talent<br/>specialists work relentlessly to attract<br/>the best candidates.
                   </h6>
                 </Col>
                 <Col style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                   <h3 style={{ fontFamily: "'Inconsolata', monospace" }}>
-                    Fintech
+                    Contract Hires
                   </h3>
                   <h6 style={{ fontFamily: "'Antic', sans-serif" }}>
-                    Build statistical models, iterate on<br/>them quickly and increase<br/>productivity.
-                  </h6>
-                </Col>
-                <Col style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                  <h3 style={{ fontFamily: "'Inconsolata', monospace" }}>
-                    Fintech
-                  </h3>
-                  <h6 style={{ fontFamily: "'Antic', sans-serif" }}>
-                    Build statistical models, iterate on<br/>them quickly and increase<br/>productivity.
+                    If you have a project that requires an<br/>extra individual or a whole team, we<br/>can source professionals with<br/>specialist skills and experience who<br/>can add to your team and deliver<br/>complex projects.
                   </h6>
                 </Col>
               </Row>
@@ -185,11 +182,20 @@ class RemoteTeamsPage extends React.Component {
             <Row style={{ height: "100vh", backgroundColor: "#4d22a8" }}>
               <Col style={{ display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center" }} className="fourth">
                 <h2 style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "center" }}>
-                  At Tweag, we drive purposeful<br/>innovation through lasting<br/>software. We apply mathematics,<br/>computer science and the<br/>methods of open source to<br/>advance software engineering.
+                  At Maracuya we are a small<br/>dedicated team, specialising in<br/>the Latin American market.
                 </h2>
               </Col>
-              <Col>
-                
+              <Col style={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-end" }}>
+                <Figure style={{ marginBottom: "-4.5rem" /* margin: "-2rem 0 0 -10.5rem" */ }}>
+                  <Figure.Image
+                    width="400px"
+                    height="400px"
+                    alt=""
+                    style={{  }}
+                    src={process.env.PUBLIC_URL + '/passionFlower2.svg'}
+                    className=""
+                  />
+                </Figure>
               </Col>
             </Row>
           </Section>
@@ -197,25 +203,40 @@ class RemoteTeamsPage extends React.Component {
             <Row style={{ height: "100vh" }}>
               <Col style={{ display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center" }} className="fifth">
                 <h1 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "center" }}>
-                  TRUSTED BY LEADERS
-                  & INNOVATORS
+                  We strive to provide you with the best<br />talent in the field, and ultimately help you<br />to reach your business goals.
                 </h1>
               </Col>
             </Row>
           </Section>
           <Section>
             <Row style={{ height: "100vh" }}>
-              <Col style={{ backgroundColor: "#ff3b5a", height: "70vh", display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center" }}>
+              <Col style={{ backgroundColor: "#ff3b5a", height: "50vh", display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center" }}>
                 <Container style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center" }} className="sixth">
                   <h1 style={{ fontFamily: "'Inconsolata', monospace" }}>
-                    READY TO ACHIEVE<br/>YOUR BIG VISION?
+                    DISCOVER<br/>
+                    YOUR<br/>
+                    POTENTIAL
                   </h1>
                   <Button className="contactUs" style={{ borderRadius: "5rem" }} variant="outline-dark">Contact Us</Button>
                 </Container>
               </Col>
-              <Row style={{ backgroundColor: "#2e2c2b", height: "30vh" }}>
+              <Row style={{ backgroundColor: "#2e2c2b", height: "50vh" }}>
+                <Row style={{ textAlign: "center" }}>
+                  <Figure style={{ marginBottom: "0" /* margin: "-2rem 0 0 -10.5rem" */ }}>
+                    <Figure.Image
+                      width="200px"
+                      height="200px"
+                      alt=""
+                      style={{ marginBottom: "-150px",
+                        marginTop: "-170px" }}
+                      src={process.env.PUBLIC_URL + '/passionFlower.svg'}
+                      className="logo"
+                    />
+                  </Figure>
+                </Row>
                 <Col style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "left", display: "flex", alignItems: "flex-end" }}>
-                  <Container style={{ display: "flex" }}>
+                  
+                  <Container style={{ display: "flex", margin: "1.5rem" }}>
                     <div className="borderImage" style={{ width: "200px", backgroundImage: "url(" + process.env.PUBLIC_URL + '/pf.svg' + ")", backgroundRepeat: "no-repeat", backgroundSize: "75px 100%", backgroundPosition: "center center", border: "10px solid", borderImage: "url('https://a3.vnda.com.br/tucumbrasil/2019/04/25/pk-qd-000005-quadro-parakana-7537.jpg?v=1556228187') 0 80 0 80 / 0 10px 0 0px round", /* borderImage: 'repeating-linear-gradient(45deg, #f33, #3bf, #f33 30px) 60', */ padding: "0px 20px 0px 40px" }}>
                   
                       <h1 style={{ fontFamily: "'Jost', sans-serif", fontSize: "2.5rem", letterSpacing: ".25rem", fontWeight: 200, textAlign: "right", color: "#ED047A" /* , lineHeight: "0.9" */ }}>MA<br/><span style={{ letterSpacing: ".125rem", fontWeight: 300 }}>RA</span><br/><span style={{ letterSpacing: "-.125rem", fontWeight: 800 }}>CU</span><br/><span style={{ letterSpacing: "-.25rem", fontWeight: 900 }}>YA</span></h1>
