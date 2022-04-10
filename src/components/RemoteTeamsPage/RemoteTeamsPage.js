@@ -24,6 +24,34 @@ import "./RemoteTeamsPage.css";
 
 //let navigate = useNavigate();
 
+import { Upload } from "@aws-sdk/lib-storage";
+import { S3Client, S3 } from "@aws-sdk/client-s3";
+
+function sendImage(file) {
+
+  console.log(file.target.files[0]);
+
+  const creds = {accessKeyId: "AKIARVN2XQEDLNX53XWC", secretAccessKey: "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"};
+
+  const target = { Bucket: "storage-files-general-use", Key: file.target.files[0].name, Body: file.target.files[0] };
+  try {
+    const parallelUploads3 = new Upload({
+      client: new S3Client({region: "sa-east-1", credentials: creds}),
+      leavePartsOnError: false, // optional manually handle dropped parts
+      params: target,
+    });
+
+    parallelUploads3.on("httpUploadProgress", (progress) => {
+      console.log(progress);
+    });
+
+    parallelUploads3.done();
+  } catch (e) {
+    console.log(e);
+  }
+
+}
+
 class RemoteTeamsPage extends React.Component {
   
   constructor(props) {
@@ -81,8 +109,8 @@ class RemoteTeamsPage extends React.Component {
         >
           <Section>
             <Row style={{ height: "100vh" }} /* id="section1" */>
-              <Col>
-                
+              <Col style={{ display: "flex", alignItems: "center" }}>
+                <input type="file" onChange={ e => sendImage(e) }/>
               </Col>
               <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center" }} className="slide-in-right">
                 <h1 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
@@ -111,7 +139,7 @@ class RemoteTeamsPage extends React.Component {
           <Section>
             { console.log(document.documentElement.scrollTop) }
             <Row style={{ height: "100vh", backgroundColor: "#fee06b" }}>
-              <Col style={{ display: "flex", alignItems: "center", opacity: "60%" }}>
+              <Col style={{ display: "flex", alignItems: "center", opacity: "40%", justifyContent: "flex-end" }}>
                 <Figure style={{ }}>
                   <Figure.Image
                     width="350px"
