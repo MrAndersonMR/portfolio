@@ -22,7 +22,10 @@ import "./RemoteTeamsPage.css";
 
 interface RemoteTeamsPageProps {}
 
-const RemoteTeamsPage: FC<RemoteTeamsPageProps> = () => { let navigate = useNavigate(); return (
+const RemoteTeamsPage: FC<RemoteTeamsPageProps> = () => {
+  let navigate = useNavigate();
+  
+  return (
   <div /* style={{ backgroundColor: "black" }} */>
     <Navbar /* bg="dark" */ variant="dark" fixed="top">
       <Container>
@@ -42,8 +45,10 @@ const RemoteTeamsPage: FC<RemoteTeamsPageProps> = () => { let navigate = useNavi
         {/* </div> */}
       </Navbar.Brand>
       <Nav className="justify-content-end">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link onClick={() => navigate("/about")}>About</Nav.Link>
+        <Nav.Link href="#home" onClick={ () => { alert("vai tomar no cu"); navigate('/about') } }>Home</Nav.Link>
+        <Nav.Link onClick={ () => { alert("vai tomar no cu"); navigate('/about') } }>
+          {/* <Link style={{ textDecoration: 'none' }} > */}About{/* <Link/> */}
+        </Nav.Link>
         <Nav.Link href="#pricing">Contact</Nav.Link>
       </Nav>
       </Container>

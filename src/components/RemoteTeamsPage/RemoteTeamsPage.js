@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import { Scroller, Section } from "react-fully-scrolled";
 
-import { useNavigate } from "react-router-dom";
+/* import { useNavigation } from "@react-navigation/native"; */
 
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -23,6 +23,7 @@ import $ from 'jquery';
 import "./RemoteTeamsPage.css";
 
 //let navigate = useNavigate();
+
 
 import { Upload } from "@aws-sdk/lib-storage";
 import { S3Client, S3 } from "@aws-sdk/client-s3";
@@ -52,6 +53,11 @@ function sendImage(file) {
 
 }
 
+/* function RootFunction () {
+  const navigation = useNavigation();
+  return <RemoteTeamsPage navigation={navigation} />
+} */
+
 class RemoteTeamsPage extends React.Component {
   
   constructor(props) {
@@ -62,7 +68,7 @@ class RemoteTeamsPage extends React.Component {
   }
 
   render() {
-    const { navigation } = this.props;
+    const { navigate } = this.props;
 
     return (
       <div /* style={{ backgroundColor: "black" }} */>
@@ -87,7 +93,10 @@ class RemoteTeamsPage extends React.Component {
           </Navbar.Brand>
           <Nav className="navBar justify-content-end">
             <Nav.Link className="navBar" href="#home">Home</Nav.Link>
-            <Nav.Link className="navBar" /* onClick={() => this.props.navigate('/about')} */>About</Nav.Link>
+            <Nav.Link className="navBar" /* onPress={() => {
+            this.props.navigation.navigate('/about')
+                    // now prop will be available here
+            }} */ /* onClick={() => this.props.navigate('/about')} */>About</Nav.Link>
             <Nav.Link className="navBar" href="#pricing">Contact</Nav.Link>
           </Nav>
           </Container>
@@ -110,7 +119,7 @@ class RemoteTeamsPage extends React.Component {
           <Section>
             <Row style={{ height: "100vh" }} /* id="section1" */>
               <Col style={{ display: "flex", alignItems: "center" }}>
-                <input type="file" onChange={ e => sendImage(e) }/>
+                {/* <input type="file" onChange={ e => sendImage(e) }/> */}
               </Col>
               <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center" }} className="slide-in-right">
                 <h1 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
@@ -140,7 +149,7 @@ class RemoteTeamsPage extends React.Component {
             { console.log(document.documentElement.scrollTop) }
             <Row style={{ height: "100vh", backgroundColor: "#fee06b" }}>
               <Col style={{ display: "flex", alignItems: "center", opacity: "40%", justifyContent: "flex-end" }}>
-                <Figure style={{ }}>
+                {/* <Figure style={{ }}>
                   <Figure.Image
                     width="350px"
                     height="350px"
@@ -149,7 +158,7 @@ class RemoteTeamsPage extends React.Component {
                     src={process.env.PUBLIC_URL + '/panel.svg'}
                     className=""
                   />
-                </Figure>
+                </Figure> */}
               </Col>
               <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center" }} className="second">
                 <h3 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
@@ -258,7 +267,7 @@ class RemoteTeamsPage extends React.Component {
                       style={{ marginBottom: "-150px",
                         marginTop: "-170px" }}
                       src={process.env.PUBLIC_URL + '/passionFlower.svg'}
-                      className="logo"
+                      className="logo rotate-90-cw"
                     />
                   </Figure>
                 </Row>
