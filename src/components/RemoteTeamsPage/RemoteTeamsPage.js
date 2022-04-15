@@ -121,7 +121,7 @@ class RemoteTeamsPage extends React.Component {
               <Col style={{ display: "flex", alignItems: "center" }}>
                 {/* <input type="file" onChange={ e => sendImage(e) }/> */}
               </Col>
-              <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center" }} className="slide-in-right">
+              <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center", marginLeft: "10rem" }} className="slide-in-right">
                 <h1 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
                   HIRE THE<br />
                   BEST DEVELOPERS<br />
