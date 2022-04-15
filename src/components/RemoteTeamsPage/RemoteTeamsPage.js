@@ -259,18 +259,18 @@ class RemoteTeamsPage extends React.Component {
               </Col>
               <Row style={{ backgroundColor: "#2e2c2b", height: "50vh" }}>
                 <Row style={{ textAlign: "center" }}>
-                  <Figure style={{ marginBottom: "0" /* margin: "-2rem 0 0 -10.5rem" */ }}>
+                  {/* <Figure style={{ marginBottom: "0" /* margin: "-2rem 0 0 -10.5rem" / }}>
                     <Figure.Image
                       width="200px"
                       height="200px"
                       alt=""
-                      style={{ float: "right", /* marginBottom: "-150px", */
-                        marginTop: "-140px" /* "-170px" */,
+                      style={{ float: "right", /* marginBottom: "-150px", /
+                        marginTop: "-140px" /* "-170px" /,
                          }}
                       src={process.env.PUBLIC_URL + '/passionFlower2.svg'}
-                      className="pf" /* rotate-center */ 
+                      className="pf" /* rotate-center / 
                     />
-                  </Figure>
+                  </Figure> */}
                 </Row>
                 <Col style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "left", display: "flex", alignItems: "flex-end" }}>
                   
