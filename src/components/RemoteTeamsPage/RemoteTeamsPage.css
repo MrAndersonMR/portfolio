@@ -127,6 +127,10 @@ li:before {
     filter: invert(0%) sepia(0%) saturate(16%) hue-rotate(245deg) brightness(103%) contrast(104%);
 }
 
+.pf {
+    filter: invert(16%) sepia(1%) saturate(4009%) hue-rotate(26deg) brightness(90%) contrast(84%);
+}
+
 .titleWhite {
     color: white !important;
 }
@@ -139,6 +143,25 @@ li:before {
     content: " →"
 }
 
+.title-border {
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+.subtitle-border {
+    /* text-shadow: 4px 0 0 #fff, -4px 0 0 #fff, 0 4px 0 #fff, 0 -4px 0 #fff, 2.5px 2.5px #fff, -2.5px -2px 0 #fff, 2.5px -2.5px 0 #fff, -2.5px 2.5px 0 #fff; */
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+.markColor {
+    background-color: white !important;
+    color: #FEAF1E;
+}
+
+.markColorT {
+    background-color: white !important;
+    color: "#ED047A" !important;
+}
+
 .fade-out{-webkit-animation:fade-out 2s ease-out alternate-reverse;animation:fade-out 2s ease-out alternate-reverse}
 
 @-webkit-keyframes fade-out{0%{opacity:1}100%{opacity:0}}@keyframes fade-out{0%{opacity:1}100%{opacity:0}}
@@ -147,6 +170,6 @@ li:before {
 
 @-webkit-keyframes shake-vertical{0%,100%{-webkit-transform:translateY(0);transform:translateY(0)}10%,30%,50%,70%{-webkit-transform:translateY(-8px);transform:translateY(-8px)}20%,40%,60%{-webkit-transform:translateY(8px);transform:translateY(8px)}80%{-webkit-transform:translateY(6.4px);transform:translateY(6.4px)}90%{-webkit-transform:translateY(-6.4px);transform:translateY(-6.4px)}}@keyframes shake-vertical{0%,100%{-webkit-transform:translateY(0);transform:translateY(0)}10%,30%,50%,70%{-webkit-transform:translateY(-8px);transform:translateY(-8px)}20%,40%,60%{-webkit-transform:translateY(8px);transform:translateY(8px)}80%{-webkit-transform:translateY(6.4px);transform:translateY(6.4px)}90%{-webkit-transform:translateY(-6.4px);transform:translateY(-6.4px)}}
 
-.rotate-90-cw{-webkit-animation:rotate-90-cw 40s cubic-bezier(.25,.46,.45,.94) infinite alternate-reverse both;animation:rotate-90-cw 40s cubic-bezier(.25,.46,.45,.94) infinite alternate-reverse both}
+/* .rotate-center{-webkit-animation:rotate-center 30s linear infinite both;animation:rotate-center 30s infinite both}
 
-@-webkit-keyframes rotate-90-cw{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(90deg);transform:rotate(90deg)}}@keyframes rotate-90-cw{0%{-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}100%{-webkit-transform:rotate(90deg);transform:rotate(90deg)}}
+@-webkit-keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}} */

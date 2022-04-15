@@ -77,27 +77,27 @@ class RemoteTeamsPage extends React.Component {
           <Container>
           <Navbar.Brand className="mainBrand" href="#home" style={{ display: "flex", alignItems: "center" }}>
             {/* <div className="borderImage" style={{ border: "30px solid", borderImage: "url('https://a3.vnda.com.br/tucumbrasil/2019/04/25/pk-qd-000005-quadro-parakana-7537.jpg?v=1556228187') 80 80 80 80 / 10px 10px 10px 10px round", /* borderImage: 'repeating-linear-gradient(45deg, #f33, #3bf, #f33 30px) 60', / /* padding: "20px 20px 20px 40px" / }}> */}
-            <p className="title" style={{ fontFamily: "'Jost', sans-serif", fontSize: "2rem", letterSpacing: ".25rem", fontWeight: 200, textAlign: "right", color: "#ED047A" /* , lineHeight: "0.9" */ }}>MA{/* <br/> */}<span style={{ letterSpacing: ".125rem", fontWeight: 300 }}>RA</span>{/* <br/> */}<span style={{ letterSpacing: "-.125rem", fontWeight: 800 }}>CU</span>{/* <br/> */}<span style={{ letterSpacing: "-.25rem", fontWeight: 900 }}>YA</span></p>
+            <p className="title title-border" style={{ fontFamily: "'Jost', sans-serif", fontSize: "2rem", letterSpacing: ".25rem", fontWeight: 200, textAlign: "right", color: "#ED047A" /* , lineHeight: "0.9" */ }}><mark className="markT markColorT" style={{ backgroundColor: "transparent", color: "#ED047A" }}>MA{/* <br/> */}<span style={{ letterSpacing: ".125rem", fontWeight: 300 }}>RA</span>{/* <br/> */}<span style={{ letterSpacing: "-.125rem", fontWeight: 800 }}>CU</span>{/* <br/> */}<span style={{ letterSpacing: "-.25rem", fontWeight: 900 }}>YA</span></mark></p>
               <Figure style={{ marginBottom: "0" /* margin: "-2rem 0 0 -10.5rem" */ }}>
                 <Figure.Image
                   width="35px"
                   height="35px"
                   alt=""
-                  style={{ marginBottom: "0", marginLeft: "-50px", marginRight: "140px", marginTop: "20px" }}
+                  style={{ marginBottom: "0", marginLeft: "-50px", marginRight: "140px", marginTop: "20px", /* filter: "drop-shadow(0px 0px 6px red)" */ }}
                   src={process.env.PUBLIC_URL + '/pf.svg'}
                   className="logo"
                 />
               </Figure>
-              <p className="subtitle" style={{ fontFamily: "'Inconsolata', monospace", fontSize: "1rem", /* letterSpacing: ".35rem", */ textAlign: "right", color: /* "white" */ "#FEAF1E" /* "#002b59" */, marginTop: "3rem", marginLeft: "-8.5rem", /* marginBottom: "0", textDecoration: "overline" */ /* , marginRight: ".75rem" */ }}>consulting</p>
+              <p className="subtitle" style={{ fontFamily: "'Inconsolata', monospace", fontSize: "1rem", /* letterSpacing: ".35rem", */ textAlign: "right", color: /* "white" */ "#FEAF1E" /* "#002b59" */, marginTop: "3rem", marginLeft: "-8.5rem", /* marginBottom: "0", textDecoration: "overline" */ /* , marginRight: ".75rem" */ }}><mark className="mark markColor" style={{ backgroundColor: "transparent", color: "#FEAF1E" }}>consulting</mark></p>
             {/* </div> */}
           </Navbar.Brand>
           <Nav className="navBar justify-content-end">
-            <Nav.Link className="navBar" href="#home">Home</Nav.Link>
-            <Nav.Link className="navBar" /* onPress={() => {
+            <mark className="mark markColor" style={{ backgroundColor: "transparent", color: "#FEAF1E" }}><Nav.Link className="navBar" href="#home">Home</Nav.Link></mark>
+            <mark className="mark markColor" style={{ backgroundColor: "transparent", color: "#FEAF1E" }}><Nav.Link className="navBar" /* onPress={() => {
             this.props.navigation.navigate('/about')
                     // now prop will be available here
-            }} */ /* onClick={() => this.props.navigate('/about')} */>About</Nav.Link>
-            <Nav.Link className="navBar" href="#pricing">Contact</Nav.Link>
+            }} */ /* onClick={() => this.props.navigate('/about')} */>About</Nav.Link></mark>
+            <mark className="mark markColor" style={{ backgroundColor: "transparent", color: "#FEAF1E" }}><Nav.Link className="navBar" href="#pricing">Contact</Nav.Link></mark>
           </Nav>
           </Container>
         </Navbar>
@@ -106,18 +106,18 @@ class RemoteTeamsPage extends React.Component {
           curPage={1}
           onBeforeScroll={(from, to) => { $(".mainBrand").addClass("fade-out") && $(".navBar").addClass("fade-out") }}
           onAfterScroll={ page => { $(".mainBrand").removeClass("fade-out") && $(".navBar").removeClass("fade-out") &&
-            (page == 1) ? $(".logo").addClass("filterGreen") && $(".second").addClass("slide-in-bottom") && $(".subtitle").removeClass("subtitleBlack") :
-            (page == 2) ? ($(".second").addClass("slide-in-bottom") && $(".subtitle").addClass("subtitleBlack")) :
-            (page == 3) ? ($(".third").addClass("slide-in-bottom") && $(".navBar").removeClass("navBarWhite") && $(".logo").removeClass("logoWhite") && $(".subtitle").removeClass("subtitleBlack")) :
-            (page == 4) ? ($(".fourth").addClass("slide-in-bottom") && $(".navBar").addClass("navBarWhite") && $(".logo").addClass("logoWhite")) :
-            (page == 5) ? ($(".fifth").addClass("slide-in-bottom") && $(".navBar").removeClass("navBarWhite") &&  $(".title").removeClass("titleWhite") && $(".logo").removeClass("logoWhite") && $(".subtitle").removeClass("subtitleBlack") ) :
-            (page == 6) ? ($(".sixth").addClass("slide-in-bottom") && $(".navBar").addClass("navBarWhite") &&  $(".title").addClass("titleWhite") && $(".subtitle").addClass("subtitleBlack")) :
+            (page == 1) ? $(".logo").addClass("filterGreen") && $(".second").addClass("slide-in-bottom") && $(".mark").removeClass("subtitleBlack") && $(".title").addClass("title-border") && $(".mark").addClass("markColor") && $(".markT").addClass("markColorT") /* && $(".subtitle").addClass("subtitle-border") */ :
+            (page == 2) ? ($(".second").addClass("slide-in-bottom") && $(".mark").addClass("subtitleBlack") && $(".title").removeClass("title-border") && $(".mark").removeClass("markColor") && $(".markT").removeClass("markColorT") /* && $(".subtitle").removeClass("subtitle-border") */) :
+            (page == 3) ? ($(".third").addClass("slide-in-bottom") && $(".navBar").removeClass("navBarWhite") && $(".logo").removeClass("logoWhite") && $(".mark").removeClass("subtitleBlack") && $(".title").removeClass("title-border") /* && $(".subtitle").removeClass("subtitle-border") */) :
+            (page == 4) ? ($(".fourth").addClass("slide-in-bottom") && $(".navBar").addClass("navBarWhite") && $(".logo").addClass("logoWhite") && $(".title").removeClass("title-border") /* && $(".subtitle").removeClass("subtitle-border") */) :
+            (page == 5) ? ($(".fifth").addClass("slide-in-bottom") && $(".navBar").removeClass("navBarWhite") &&  $(".markT").removeClass("titleWhite") && $(".logo").removeClass("logoWhite") && $(".mark").removeClass("subtitleBlack") && $(".title").removeClass("title-border") /* && $(".subtitle").removeClass("subtitle-border") */) :
+            (page == 6) ? ($(".sixth").addClass("slide-in-bottom") && $(".navBar").addClass("navBarWhite") &&  $(".markT").addClass("titleWhite") && $(".mark").addClass("subtitleBlack") && $(".title").removeClass("title-border") /* && $(".subtitle").removeClass("subtitle-border") */) :
             console.log('Anderson') }
           }
           isEnabled={true}
         >
           <Section>
-            <Row style={{ height: "100vh" }} /* id="section1" */>
+            <Row style={{ height: "100vh", backgroundImage: "url(https://cdn.pixabay.com/photo/2015/07/10/15/13/architecture-839362_960_720.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }} /* id="section1" */>
               <Col style={{ display: "flex", alignItems: "center" }}>
                 {/* <input type="file" onChange={ e => sendImage(e) }/> */}
               </Col>
@@ -228,8 +228,8 @@ class RemoteTeamsPage extends React.Component {
                     width="400px"
                     height="400px"
                     alt=""
-                    style={{  }}
-                    src={process.env.PUBLIC_URL + '/passionFlower2.svg'}
+                    style={{ marginBottom: "5rem" }}
+                    src={process.env.PUBLIC_URL + '/passionFlower.svg'}
                     className=""
                   />
                 </Figure>
@@ -264,17 +264,18 @@ class RemoteTeamsPage extends React.Component {
                       width="200px"
                       height="200px"
                       alt=""
-                      style={{ marginBottom: "-150px",
-                        marginTop: "-170px" }}
-                      src={process.env.PUBLIC_URL + '/passionFlower.svg'}
-                      className="logo rotate-90-cw"
+                      style={{ float: "right", /* marginBottom: "-150px", */
+                        marginTop: "-140px" /* "-170px" */,
+                         }}
+                      src={process.env.PUBLIC_URL + '/passionFlower2.svg'}
+                      className="pf" /* rotate-center */ 
                     />
                   </Figure>
                 </Row>
                 <Col style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "left", display: "flex", alignItems: "flex-end" }}>
                   
                   <Container style={{ display: "flex", margin: "1.5rem" }}>
-                    <div className="borderImage" style={{ width: "200px", backgroundImage: "url(" + process.env.PUBLIC_URL + '/pf.svg' + ")", backgroundRepeat: "no-repeat", backgroundSize: "75px 100%", backgroundPosition: "center center", border: "10px solid", borderImage: "url('https://a3.vnda.com.br/tucumbrasil/2019/04/25/pk-qd-000005-quadro-parakana-7537.jpg?v=1556228187') 0 80 0 80 / 0 10px 0 0px round", /* borderImage: 'repeating-linear-gradient(45deg, #f33, #3bf, #f33 30px) 60', */ padding: "0px 20px 0px 40px" }}>
+                    <div className="borderImage" style={{ width: "200px", backgroundImage: "url(" + process.env.PUBLIC_URL + '/pf.svg' + ")", backgroundRepeat: "no-repeat", backgroundSize: "75px 100%", backgroundPosition: "center center", border: "10px solid", borderImage: "url('https://site.groupe-psa.com/content/uploads/sites/3/2016/12/white-background-2.jpg') 0 80 0 80 / 0 10px 0 0px round", /* borderImage: 'repeating-linear-gradient(45deg, #f33, #3bf, #f33 30px) 60', */ padding: "0px 20px 0px 40px" }}> {/* https://a3.vnda.com.br/tucumbrasil/2019/04/25/pk-qd-000005-quadro-parakana-7537.jpg?v=1556228187 */}
                   
                       <h1 style={{ fontFamily: "'Jost', sans-serif", fontSize: "2.5rem", letterSpacing: ".25rem", fontWeight: 200, textAlign: "right", color: "#ED047A" /* , lineHeight: "0.9" */ }}>MA<br/><span style={{ letterSpacing: ".125rem", fontWeight: 300 }}>RA</span><br/><span style={{ letterSpacing: "-.125rem", fontWeight: 800 }}>CU</span><br/><span style={{ letterSpacing: "-.25rem", fontWeight: 900 }}>YA</span></h1>
                       <h2 style={{ fontFamily: "'Inconsolata', monospace", fontSize: "1rem", textAlign: "right", color: "#FEAF1E", marginTop: "-.5rem" }}>consulting</h2>
