@@ -73,9 +73,13 @@ li:before {
 
 @keyframes slide-in-bottom{0%{transform:translateY(1000px);opacity:0}100%{transform:translateY(0);opacity:1}}
 
-.slide-in-right{-webkit-animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both}
+.slide-in-right{-webkit-animation:slide-in-right 1s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-right 1s cubic-bezier(.25,.46,.45,.94) both}
 
 @-webkit-keyframes slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
+
+.slide-in-left{-webkit-animation:slide-in-left 1s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-left 1s cubic-bezier(.25,.46,.45,.94) both}
+
+@-webkit-keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
 
 .NavigationButton {
     position: fixed;
@@ -173,3 +177,65 @@ li:before {
 /* .rotate-center{-webkit-animation:rotate-center 30s linear infinite both;animation:rotate-center 30s infinite both}
 
 @-webkit-keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}} */
+
+@media screen and (max-width: 700px) {
+    .third {
+        width: 100vw !important;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .second {
+        height: 100vh !important;
+    }
+    .slide-in-right {
+        height: 100vh !important;
+        margin-top: 5rem;
+    }
+    .passionFruitFlower {
+        display: none !important;
+    }
+    .emptyMain {
+        display: none !important;
+    }
+    .contNav {
+        flex-direction: column;
+    }
+    .shake-vertical {
+        margin-top: -3rem !important;
+    }
+    .sMessage {
+        display: none !important;
+    }
+    .avatar {
+        width: 64px;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .second {
+        padding-top: 10rem !important;
+    }
+    .third {
+        padding-top: 10rem !important;
+    }
+    .contTeam {
+        padding-top: 10rem;
+    }
+    .line {
+        height: 35vh !important;
+    }
+    /* .avCard {
+        display: flex;
+        width: 100vw !important;
+        justify-content: center !important;
+    } */
+}
+
+@media screen and (max-height: 600px) and (max-width: 576px) {
+    .avCard {
+        display: flex;
+        width: 100vw !important;
+        justify-content: center !important;
+    }
+}

@@ -73,8 +73,8 @@ class RemoteTeamsPage extends React.Component {
     return (
       <div /* style={{ backgroundColor: "black" }} */>
         
-        <Navbar /* bg="dark" */ variant="light" fixed="top">
-          <Container>
+        <Navbar  /* bg="dark" */ variant="light" fixed="top">
+          <Container className="contNav">
           <Navbar.Brand className="mainBrand" href="#home" style={{ display: "flex", alignItems: "center" }}>
             {/* <div className="borderImage" style={{ border: "30px solid", borderImage: "url('https://a3.vnda.com.br/tucumbrasil/2019/04/25/pk-qd-000005-quadro-parakana-7537.jpg?v=1556228187') 80 80 80 80 / 10px 10px 10px 10px round", /* borderImage: 'repeating-linear-gradient(45deg, #f33, #3bf, #f33 30px) 60', / /* padding: "20px 20px 20px 40px" / }}> */}
             <p className="title title-border" style={{ fontFamily: "'Jost', sans-serif", fontSize: "2rem", letterSpacing: ".25rem", fontWeight: 200, textAlign: "right", color: "#ED047A" /* , lineHeight: "0.9" */ }}><mark className="markT markColorT" style={{ backgroundColor: "transparent", color: "#ED047A" }}>MA{/* <br/> */}<span style={{ letterSpacing: ".125rem", fontWeight: 300 }}>RA</span>{/* <br/> */}<span style={{ letterSpacing: "-.125rem", fontWeight: 800 }}>CU</span>{/* <br/> */}<span style={{ letterSpacing: "-.25rem", fontWeight: 900 }}>YA</span></mark></p>
@@ -91,6 +91,7 @@ class RemoteTeamsPage extends React.Component {
               <p className="subtitle" style={{ fontFamily: "'Inconsolata', monospace", fontSize: "1rem", /* letterSpacing: ".35rem", */ textAlign: "right", color: /* "white" */ "#FEAF1E" /* "#002b59" */, marginTop: "3rem", marginLeft: "-8.5rem", /* marginBottom: "0", textDecoration: "overline" */ /* , marginRight: ".75rem" */ }}><mark className="mark markColor" style={{ backgroundColor: "transparent", color: "#FEAF1E" }}>consulting</mark></p>
             {/* </div> */}
           </Navbar.Brand>
+          <Navbar collapseOnSelect>
           <Nav className="navBar justify-content-end">
             <mark className="mark markColor" style={{ backgroundColor: "transparent", color: "#FEAF1E" }}><Nav.Link className="navBar" href="#home">Home</Nav.Link></mark>
             <mark className="mark markColor" style={{ backgroundColor: "transparent", color: "#FEAF1E" }}><Nav.Link className="navBar" /* onPress={() => {
@@ -99,6 +100,7 @@ class RemoteTeamsPage extends React.Component {
             }} */ /* onClick={() => this.props.navigate('/about')} */>About</Nav.Link></mark>
             <mark className="mark markColor" style={{ backgroundColor: "transparent", color: "#FEAF1E" }}><Nav.Link className="navBar" href="#pricing">Contact</Nav.Link></mark>
           </Nav>
+          </Navbar>
           </Container>
         </Navbar>
 
@@ -110,18 +112,18 @@ class RemoteTeamsPage extends React.Component {
             (page == 2) ? ($(".second").addClass("slide-in-bottom") && $(".logo").addClass("logoWhite") /* && $(".mark").addClass("subtitleBlack") */ && $(".title").removeClass("title-border") && $(".mark").removeClass("markColor") && $(".markT").removeClass("markColorT") && $(".navBar").addClass("navBarWhite") /* && $(".subtitle").removeClass("subtitle-border") */) :
             (page == 3) ? ($(".third").addClass("slide-in-bottom") && $(".mark").removeClass("subtitleBlack") && $(".navBar").removeClass("navBarWhite") && $(".logo").removeClass("logoWhite") && $(".mark").removeClass("subtitleBlack") && $(".title").removeClass("title-border") /* && $(".subtitle").removeClass("subtitle-border") */) :
             (page == 4) ? ($(".fifth").addClass("slide-in-bottom") && $(".mark").addClass("subtitleBlack") && $(".logo").removeClass("logoWhite") && $(".markT").removeClass("titleWhite") && $(".logo").addClass("filterGreen") && $(".navBar").addClass("navBarWhite") /* && $(".logo").addClass("logoWhite") */ && $(".title").removeClass("title-border") && $(".navBar").removeClass("navBarWhite") /* && $(".subtitle").removeClass("subtitle-border") */) :
-            //(page == 5) ? ($(".fifth").addClass("slide-in-bottom") && $(".navBar").removeClass("navBarWhite") &&  $(".markT").removeClass("titleWhite") && $(".logo").removeClass("logoWhite") && $(".mark").removeClass("subtitleBlack") && $(".title").removeClass("title-border") /* && $(".subtitle").removeClass("subtitle-border") */) :
-            (page == 5) ? ($(".sixth").addClass("slide-in-bottom") && $(".navBar").addClass("navBarWhite") &&  $(".markT").addClass("titleWhite") && $(".mark").addClass("subtitleBlack") && $(".title").removeClass("title-border") /* && $(".subtitle").removeClass("subtitle-border") */) :
-            console.log('Anderson') }
+            (page == 5) ? ($(".fifth").addClass("slide-in-bottom") && $(".navBar").removeClass("navBarWhite") &&  $(".markT").removeClass("titleWhite") && $(".logo").removeClass("logoWhite") && $(".mark").removeClass("subtitleBlack") && $(".title").removeClass("title-border") && $(".rightBAnimation").addClass("slide-in-right") && $(".leftBAnimation").addClass("slide-in-left") /* && $(".subtitle").removeClass("subtitle-border") */) :
+            (page == 6) ? ($(".sixth").addClass("slide-in-bottom") && $(".navBar").addClass("navBarWhite") &&  $(".markT").addClass("titleWhite") && $(".mark").addClass("subtitleBlack") && $(".title").removeClass("title-border") /* && $(".subtitle").removeClass("subtitle-border") */) :
+            console.log('No page') }
           }
           isEnabled={true}
         >
           <Section>
             <Row xs={1} sm={2} style={{ height: "100vh", backgroundImage: "url(https://cdn.pixabay.com/photo/2015/07/10/15/13/architecture-839362_960_720.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }} /* id="section1" */>
-              <Col style={{ display: "flex", alignItems: "center" }}>
+              <Col className="emptyMain" style={{ display: "flex", alignItems: "center" }}>
                 {/* <input type="file" onChange={ e => sendImage(e) }/> */}
               </Col>
-              <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center"/* , marginLeft: "10rem" */ }} className="slide-in-right">
+              <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center", padding: "0 3rem 0 3rem" /* , marginLeft: "10rem" */ }} className="slide-in-right">
                 <h1 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
                   BUILD YOUR <b>IT</b><br />TEAM WITH US!
                 </h1>
@@ -144,15 +146,16 @@ class RemoteTeamsPage extends React.Component {
             </div>
           </Section>
           <Section>
-            <Row xs={1} sm={2} style={{ height: "100vh", backgroundColor: "#4d22a8" }}>
-              <Col style={{ display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center" }} className="second">
-                
-                <h1 style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "center" }}>Who is Maracuya Consulting?</h1>
-                <h2 style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "center" }}>
-                  Maracuya Consulting is a diverse<br/>team of talented individuals with expertise in<br/>the global recruiting market.
-                </h2>
+            <Row xs={1} sm={2} className="message" style={{ height: "100vh", backgroundColor: "#4d22a8" }}>
+              <Col style={{ display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center", padding: "0 3rem 0 3rem"  }} className="second">
+                <div className="divSecond">
+                  <h1 style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "center" }}>Who is Maracuya Consulting?</h1>
+                  <h2 style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "center" }}>
+                    Maracuya Consulting is a diverse<br/>team of talented individuals with expertise in<br/>the global recruiting market.
+                  </h2>
+                </div>
               </Col>
-              <Col style={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-end" }}>
+              <Col className="passionFruitFlower" style={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-end" }}>
                 <Figure style={{ marginBottom: "-4.5rem" /* margin: "-2rem 0 0 -10.5rem" */ }}>
                   <Figure.Image
                     width="400px"
@@ -181,11 +184,11 @@ class RemoteTeamsPage extends React.Component {
                   />
                 </Figure> */}
               </Col>
-              <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center" }} className="third">
+              <Col style={{ display: "flex", placeContent: "center space-around", alignItems: "flex-start", flexDirection: "column", justifyContent: "center", padding: "0 3rem 0 3rem" }} className="third">
                 <h3 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
                   Tailerod Approach
                 </h3>
-                <h6 style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
+                <h6 className="sMessage" style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
                   At Maracuya we pride ourselves on taking a tailored approach to each<br/>
                   one of our clients positions. We take great lenghs to understand your<br/>
                   compamy, team, and business goals, in order to find you the perfect candidate.
@@ -193,27 +196,27 @@ class RemoteTeamsPage extends React.Component {
                 <h3 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
                   Access to an outstanding Talent Pool
                 </h3>
-                <h6 style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
+                <h6 className="sMessage" style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
                   We are dedicated to bring professional attention to the highly skilled talent across Latin America.<br/>
                   Their talent, dedication and soft skills are a great contribution to your business. 
                 </h6>
                 <h3 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
                   Action in real time
                 </h3>
-                <h6 style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
+                <h6 className="sMessage" style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
                   Working with us means getting results in real-time (incl agile in the text).
                 </h6>
                 <h3 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
                   We value integrity
                 </h3>
-                <h6 style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
+                <h6 className="sMessage" style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
                   Whether working with clients, candidates or our own employees we see<br/>
                   ourselves as a team and act with principle, we treat everyone with respect.
                 </h6>
                 <h3 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left" }}>
                   Dedication
                 </h3>
-                <h6 style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
+                <h6 className="sMessage" style={{ fontFamily: "'Antic', sans-serif", textAlign: "left" }}>
                   We work tirelessly to shape and match needs that result in positive<br/>
                   long-term relationships.
                 </h6>
@@ -222,43 +225,20 @@ class RemoteTeamsPage extends React.Component {
               </Col>
             </Row>
           </Section>
-          
-          {/* <Section>
-            <Row style={{ height: "100vh", backgroundColor: "#4d22a8" }}>
-              <Col style={{ display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center" }} className="fourth">
-                
-                <h1 style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "center" }}>Who is Maracuya Consulting?</h1>
-                <h2 style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "center" }}>
-                  Maracuya Consulting is a diverse<br/>team of talented individuals with expertise in<br/>the global recruiting market.
-                </h2>
-              </Col>
-              <Col style={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-end" }}>
-                <Figure style={{ marginBottom: "-4.5rem" /* margin: "-2rem 0 0 -10.5rem" / }}>
-                  <Figure.Image
-                    width="400px"
-                    height="400px"
-                    alt=""
-                    style={{ marginBottom: "5rem" }}
-                    src={process.env.PUBLIC_URL + '/passionFlower.svg'}
-                    className=""
-                  />
-                </Figure>
-              </Col>
-            </Row>
-          </Section> */}
           <Section>
-            <Container>
-            <Row style={{ height: "50vh" }}>
+            <Container className="contTeam">
+            <Row className="line" style={{ height: "50vh" }}>
               <Col style={{ display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center", backgroundColor: "#fee06b", alignItems: "center", justifyContent: "flex-end", paddingBottom: "1.5rem" }} className="fifth">
-                <div style={{ textAlign: "center", alignItems: "center" }}>
+                <div className="avCard" style={{ textAlign: "center", alignItems: "center" }}>
                   <h2 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "right", textDecorationLine: "overline" }}>
                     Elisa
                   </h2>
-                  <h6 style={{ fontFamily: "'Antic', sans-serif", color: "gray" }}>
+                  <h6 className="sMessage" style={{ fontFamily: "'Antic', sans-serif", color: "gray" }}>
                     Business Leader
                   </h6>
                   <Figure>
                     <Figure.Image
+                      className="avatar"
                       width={171}
                       height={180}
                       src="https://media-exp1.licdn.com/dms/image/C4D03AQEHXsw8RRmMlw/profile-displayphoto-shrink_800_800/0/1569443812062?e=1656547200&v=beta&t=sGXNRSY0ITbpNtpxM_xxMvpPEXm1WgW3oQwlviy7GF8"
@@ -279,18 +259,19 @@ class RemoteTeamsPage extends React.Component {
                 </div>
               </Col>
               <Col style={{ display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center", alignItems: "center", justifyContent: "flex-end", paddingBottom: "1.5rem" }} className="fifth">
-                <div style={{ textAlign: "center", alignItems: "center" }}>
+                <div className="avCard" style={{ textAlign: "center", alignItems: "center" }}>
                 <h2 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left", textDecorationLine: "overline" }}>
                   Caroline
                 </h2>
-                <h6 style={{ fontFamily: "'Antic', sans-serif", color: "gray" }}>
+                <h6 className="sMessage" style={{ fontFamily: "'Antic', sans-serif", color: "gray" }}>
                   Operational Leader
                 </h6>
                 <Figure>
                   <Figure.Image
+                    className="avatar"
                     width={171}
                     maxHeight={180}
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Gioconda_%28copia_del_Museo_del_Prado_restaurada%29.jpg/1200px-Gioconda_%28copia_del_Museo_del_Prado_restaurada%29.jpg"
+                    src="https://lmhofmeyr.co.za/wp-content/uploads/2016/09/Mona_Lisa_face_800x800px-300x300.jpg"
                   />
                 </Figure>
                 <div>
@@ -308,17 +289,18 @@ class RemoteTeamsPage extends React.Component {
                 </div>
               </Col>
             </Row>
-            <Row style={{ height: "50vh" }}>
+            <Row className="line" style={{ height: "50vh" }}>
               <Col style={{ display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center", alignItems: "center", justifyContent: "flex-start", paddingTop: "1.5rem" }} className="fifth">
-              <div style={{ textAlign: "center", alignItems: "center" }}>
+              <div className="avCard" style={{ textAlign: "center", alignItems: "center" }}>
                 <h2 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "right", textDecorationLine: "overline" }}>
                   David
                 </h2>
-                <h6 style={{ fontFamily: "'Antic', sans-serif", color: "gray" }}>
+                <h6 className="sMessage" style={{ fontFamily: "'Antic', sans-serif", color: "gray" }}>
                   Talent Expert
                 </h6>
                 <Figure>
                   <Figure.Image
+                    className="avatar"
                     width={171}
                     height={180}
                     src="https://media-exp1.licdn.com/dms/image/C4D03AQGJ1GUKpTZ8Ow/profile-displayphoto-shrink_800_800/0/1642703988023?e=1656547200&v=beta&t=nTPzF5e70AlIfn0c_Y7Mhf7cMwz08PPnFNge09Q66WY"
@@ -339,15 +321,16 @@ class RemoteTeamsPage extends React.Component {
                 </div>
               </Col>
               <Col style={{ display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center", backgroundColor: "#fee06b", alignItems: "center", justifyContent: "flex-start", paddingTop: "1.5rem" }} className="fifth">
-              <div style={{ textAlign: "center", alignItems: "center" }}>
+              <div className="avCard" style={{ textAlign: "center", alignItems: "center" }}>
                 <h2 style={{ fontFamily: "'Inconsolata', monospace", textAlign: "left", textDecorationLine: "overline" }}>
                   Patrick
                 </h2>
-                <h6 style={{ fontFamily: "'Antic', sans-serif", color: "gray" }}>
+                <h6 className="sMessage" style={{ fontFamily: "'Antic', sans-serif", color: "gray" }}>
                   Talent Expert
                 </h6>
                 <Figure>
                   <Figure.Image
+                    className="avatar"
                     width={171}
                     height={180}
                     src="https://media-exp1.licdn.com/dms/image/C4D03AQGn0HPLfQqF9Q/profile-displayphoto-shrink_800_800/0/1645458324389?e=1656547200&v=beta&t=mThHI_JWJpP-nx7Y12jH2M7NCw5tZlKKzBdVxwIe6eI"
@@ -369,6 +352,24 @@ class RemoteTeamsPage extends React.Component {
               </Col>
             </Row>
             </Container>
+          </Section>
+          <Section>
+            <Row style={{ height: "100vh" }}>
+              {/* <Col style={{ display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center" }} className="fourth">
+                
+                <h1 style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "center" }}>Who is Maracuya Consulting?</h1>
+                <h2 style={{ fontFamily: "'Antic', sans-serif", color: "white", textAlign: "center" }}>
+                  Maracuya Consulting is a diverse<br/>team of talented individuals with expertise in<br/>the global recruiting market.
+                </h2>
+              </Col> */}
+              <Col style={{ display: "flex", placeContent: "center space-around", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+                <h3>for you, Candidate</h3>
+                <Button className="rightBAnimation" variant="outline-dark" style={{ borderRadius: "0 0 0 1.5rem", marginRight: "3rem" }}>&nbsp; Contact Us</Button>
+                <br/>
+                <Button className="leftBAnimation" variant="outline-dark" style={{ borderRadius: "0 1.5rem 0 0", marginLeft: "3rem" }}>Contact Us &nbsp;</Button>
+                <h3>or for your Company</h3>
+              </Col>
+            </Row>
           </Section>
           <Section>
             <Row style={{ height: "100vh" }}>
